@@ -21,8 +21,7 @@ public class StudentMarkTracker {
             double average = calculateAverage(studentMarks[i]);
             String result = classifyAverage(average);
 
-            System.out.println (STUDENT_NAMES[i] +":" + average + "-" + result
-            );
+            System.out.println(STUDENT_NAMES[i] + ":" + average + "-" + result);
         }
     }
 
@@ -37,13 +36,15 @@ public class StudentMarkTracker {
     private static String classifyAverage(double average) {
         if (average >= EXCELLENT_THRESHOLD) {
             return "Excellent";
-        } else if (average >= GOOD_THRESHOLD) {
-            return "Good";
-        } else if (average >= PASSING_THRESHOLD) {
-            return "Passing";
-        } else {
-            return "Failed";
         }
+        if (average >= GOOD_THRESHOLD) {
+            return "Good";
+        }
+        if (average >= PASSING_THRESHOLD) {
+            return "Passing";
+        }
+        return "Failed";
     }
 }
+
 
